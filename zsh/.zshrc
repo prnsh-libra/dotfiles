@@ -135,8 +135,7 @@ df() {
 
 # edit zettelkasten
 zk() {
-  cd ~/zettelkasten
-  nvim
+  cd ~/gh/notes/content && nvim .
 }
 
 vencord() {
