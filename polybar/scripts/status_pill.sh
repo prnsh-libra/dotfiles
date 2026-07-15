@@ -87,24 +87,24 @@ render() {
   bt=$(bt_state)
   wifi=$(wifi_name)
 
-  bat_icon=""
+  bat_icon="%{T3}%{T-}"
   if [ "$bat" != "n/a" ]; then
-    if [ "$bat" -le 10 ]; then bat_icon=""
-    elif [ "$bat" -le 25 ]; then bat_icon=""
-    elif [ "$bat" -le 50 ]; then bat_icon=""
-    elif [ "$bat" -le 80 ]; then bat_icon=""
-    else bat_icon=""
+    if [ "$bat" -le 10 ]; then bat_icon="%{T3}%{T-}"
+    elif [ "$bat" -le 25 ]; then bat_icon="%{T3}%{T-}"
+    elif [ "$bat" -le 50 ]; then bat_icon="%{T3}%{T-}"
+    elif [ "$bat" -le 80 ]; then bat_icon="%{T3}%{T-}"
+    else bat_icon="%{T3}%{T-}"
     fi
   fi
 
   if [ "$state" = "Charging" ]; then
     step=$(( $(date +%s) % 5 ))
     case "$step" in
-      0) bat_icon="";;
-      1) bat_icon="";;
-      2) bat_icon="";;
-      3) bat_icon="";;
-      4) bat_icon="";;
+      0) bat_icon="%{T3}%{T-}";;
+      1) bat_icon="%{T3}%{T-}";;
+      2) bat_icon="%{T3}%{T-}";;
+      3) bat_icon="%{T3}%{T-}";;
+      4) bat_icon="%{T3}%{T-}";;
     esac
   fi
 
@@ -115,13 +115,13 @@ render() {
     *) bat_label="${bat_icon} ${bat}%";;
   esac
 
-  vol_icon=""
+  vol_icon="%{T3}%{T-}"
   if volume_muted; then
-    vol_icon=""
+    vol_icon="%{T3}%{T-}"
   else
-    if [ "$vol" -le 30 ]; then vol_icon=""
-    elif [ "$vol" -le 60 ]; then vol_icon=""
-    else vol_icon=""
+    if [ "$vol" -le 30 ]; then vol_icon="%{T3}%{T-}"
+    elif [ "$vol" -le 60 ]; then vol_icon="%{T3}%{T-}"
+    else vol_icon="%{T3}%{T-}"
     fi
   fi
 
@@ -133,17 +133,17 @@ render() {
   wifi=$(wifi_name)
   strength=$(wifi_strength)
   case "$strength" in
-    4) wifi_icon="󰤨";;
-    3) wifi_icon="󰤥";;
-    2) wifi_icon="󰤢";;
-    1) wifi_icon="󰤟";;
-    *) wifi_icon="󰤭";;
+    4) wifi_icon="%{T3}󰤨%{T-}";;
+    3) wifi_icon="%{T3}󰤥%{T-}";;
+    2) wifi_icon="%{T3}󰤢%{T-}";;
+    1) wifi_icon="%{T3}󰤟%{T-}";;
+    *) wifi_icon="%{T3}󰤭%{T-}";;
   esac
-  [ "$wifi" = "off" ] && wifi_icon="󰤭"
+  [ "$wifi" = "off" ] && wifi_icon="%{T3}󰤭%{T-}"
 
   parts="  ${bat_label}  ${vol_segment}"
   if [ -n "$bt" ]; then
-    parts="$parts   ${bt}"
+    parts="$parts  %{T3}%{T-} ${bt}"
   fi
   parts="$parts  ${wifi_icon} ${wifi}  "
 

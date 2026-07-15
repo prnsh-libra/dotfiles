@@ -71,4 +71,4 @@ code=$(get_code | tr -cd '0-9')
 bg=$(bg_for_code "$code")
 icon=$(icon_for_code "$code")
 
-printf "%%{T2}%%{F%s}%%{F-}%%{T-}%%{B%s}%s  %%{B-}" "$bg" "$bg" "$icon"
+printf "%%{T2}%%{F%s}%%{F-}%%{T-}%%{B%s}%%{T3}%s%%{T-}  %%{B-}" "$bg" "$bg" "$icon"

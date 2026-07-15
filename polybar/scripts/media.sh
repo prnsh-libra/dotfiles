@@ -122,10 +122,10 @@ render() {
     title_fmt='%{F#88d0d0d0}'
   fi
 
-  prev='%{A1:playerctl --player=spotify previous:}%{F#88d0d0d0}  %{F-}%{A}'
-  middle_text="󰎇 ${title_text}"
+  prev='%{A1:playerctl --player=spotify previous:}%{F#88d0d0d0} %{T3}%{T-} %{F-}%{A}'
+  middle_text="%{T3}󰎇%{T-} ${title_text}"
   toggle="%{A1:playerctl --player=spotify play-pause:}${title_fmt}${middle_text}%{F-}%{A}"
-  next='%{A1:playerctl --player=spotify next:}%{F#88d0d0d0}  %{F-}%{A}'
+  next='%{A1:playerctl --player=spotify next:}%{F#88d0d0d0} %{T3}%{T-} %{F-}%{A}'
 
   printf ' %s %s %s \n' "$prev" "$toggle" "$next"
 }
