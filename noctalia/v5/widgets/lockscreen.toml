@@ -1,0 +1,116 @@
+[lockscreen_widgets]
+enabled = true
+schema_version = 2
+widget_order = [
+    "lockscreen-login-box@eDP-1",
+    "lockscreen-widget-0000000000000001",
+    "lockscreen-widget-0000000000000002",
+    "lockscreen-widget-0000000000000003",
+    "lockscreen-widget-0000000000000004",
+    "lockscreen-widget-0000000000000005",
+    "lockscreen-widget-0000000000000006"
+]
+
+    [lockscreen_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = false
+
+    [lockscreen_widgets.widget."lockscreen-login-box@eDP-1"]
+    box_height = 112.0
+    box_width = 496.0
+    cx = 960.0
+    cy = 980.0
+    output = "eDP-1"
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@eDP-1".settings]
+        background_color = "on_primary"
+        background_opacity = 0.75
+        background_radius = 12.0
+        center_password_text = true
+        input_opacity = 0.95000000000000007
+        input_radius = 8.0
+        show_caps_lock = true
+        show_keyboard_layout = false
+        show_login_button = false
+        show_password_hint = false
+
+    [lockscreen_widgets.widget.lockscreen-widget-0000000000000001]
+    box_height = 144.0
+    box_width = 608.0
+    cx = 960.0
+    cy = 276.0
+    output = "eDP-1"
+    rotation = 0.0
+    type = "clock"
+
+    [lockscreen_widgets.widget.lockscreen-widget-0000000000000002]
+    box_height = 80.0
+    box_width = 496.0
+    cx = 960.0
+    cy = 796.0
+    output = "eDP-1"
+    rotation = 0.0
+    type = "audio_visualizer"
+
+        [lockscreen_widgets.widget.lockscreen-widget-0000000000000002.settings]
+        bands = 32
+        show_when_idle = true
+
+    [lockscreen_widgets.widget.lockscreen-widget-0000000000000003]
+    box_height = 160.0
+    box_width = 400.0
+    cx = 224.0
+    cy = 956.0
+    output = "eDP-1"
+    rotation = 0.0
+    type = "media_player"
+
+    [lockscreen_widgets.widget.lockscreen-widget-0000000000000004]
+    box_height = 32.0
+    box_width = 32.0
+    cx = 1824.0
+    cy = 60.0
+    output = "eDP-1"
+    rotation = 0.0
+    type = "button"
+
+        [lockscreen_widgets.widget.lockscreen-widget-0000000000000004.settings]
+        background = true
+        command = "noctalia msg session shutdown"
+        glyph = "shutdown"
+        variant = "primary"
+
+    [lockscreen_widgets.widget.lockscreen-widget-0000000000000005]
+    box_height = 32.0
+    box_width = 32.0
+    cx = 1776.0
+    cy = 60.0
+    output = "eDP-1"
+    rotation = -0.0
+    type = "button"
+
+        [lockscreen_widgets.widget.lockscreen-widget-0000000000000005.settings]
+        background = true
+        command = "noctalia msg session reboot"
+        glyph = "reboot"
+        label = ""
+        variant = "default"
+
+    [lockscreen_widgets.widget.lockscreen-widget-0000000000000006]
+    box_height = 32.0
+    box_width = 32.0
+    cx = 1728.0
+    cy = 60.0
+    output = "eDP-1"
+    rotation = 0.0
+    type = "button"
+
+        [lockscreen_widgets.widget.lockscreen-widget-0000000000000006.settings]
+        background = true
+        command = "noctalia msg session suspend"
+        glyph = "zzz"
+        label = ""
+        variant = "default"

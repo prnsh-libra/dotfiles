@@ -1,0 +1,7 @@
+[include]
+files = [
+  "appearance/",
+  "bars/",
+  "config/",
+  "widgets/",
+]

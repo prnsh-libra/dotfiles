@@ -1,0 +1,54 @@
+[widget.clock]
+capsule = true
+capsule_opacity = 0.65000000000000002
+capsule_padding = 12
+format = "{:%H:%M:%S} {:%d-%m-%Y}"
+
+[widget.control-center]
+glyph = "bolt-filled"
+
+[widget.cpu]
+show_label = false
+
+[widget.media]
+hide_when_no_media = true
+title_scroll = "on_hover"
+
+[widget.network_rx]
+enabled = false
+
+[widget.network_tx]
+enabled = false
+
+[widget.ram]
+show_label = false
+
+[widget.sysmon]
+show_label = false
+stat = "disk_pct"
+
+[widget.temp]
+show_label = false
+
+[widget.workspaces]
+active_pill_size = 2.5
+display = "none"
+scale = 0.75
+
+[[control_center.shortcuts]]
+type = "wifi"
+
+[[control_center.shortcuts]]
+type = "bluetooth"
+
+[[control_center.shortcuts]]
+type = "caffeine"
+
+[[control_center.shortcuts]]
+type = "notification"
+
+[[control_center.shortcuts]]
+type = "power_profile"
+
+[[control_center.shortcuts]]
+type = "system"

@@ -1,0 +1,20 @@
+[bar.default]
+capsule = true
+capsule_opacity = 0.79999998211860657
+capsule_padding = 8.0
+center = [ "notifications", "clock", "caffeine" ]
+end = [ "network", "bluetooth", "volume", "brightness", "battery", "control-center" ]
+margin_ends = 0
+scale = 0.7500000037252903
+shadow = false
+start = [ "launcher", "workspaces", "tray", "media", "group:g1" ]
+thickness = 28
+
+    [[bar.default.capsule_group]]
+    enabled = true
+    fill = "surface_variant"
+    id = "g1"
+    members = [ "cpu", "ram", "temp", "sysmon", "network_rx", "network_tx" ]
+    opacity = 1.0
+    padding = 6.0
+

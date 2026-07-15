@@ -1,0 +1,15 @@
+[wallpaper.default]
+path = "/home/prnsh/Pictures/Wallpapers/gengar.jpg"
+
+[wallpaper.last]
+path = "/home/prnsh/Pictures/Wallpapers/gengar.jpg"
+
+[wallpaper.monitors.eDP-1]
+path = "/home/prnsh/Pictures/Wallpapers/gengar.jpg"
+
+[[wallpaper.favorite]]
+palette_source = "wallpaper"
+path = "/home/prnsh/Pictures/Wallpapers/gengar.jpg"
+theme_mode = "dark"
+wallpaper_scheme = "m3-monochrome"
+

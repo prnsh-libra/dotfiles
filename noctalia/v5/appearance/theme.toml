@@ -1,0 +1,22 @@
+[theme]
+community_palette = "Oxocarbon"
+mode = "dark"
+source = "wallpaper"
+wallpaper_scheme = "m3-monochrome"
+
+    [theme.templates]
+    enable_builtin_templates = false
+
+[backdrop]
+blur_intensity = 0.00
+enabled = true
+tint_intensity = 0.09
+
+[notification]
+background_opacity = 0.80
+scale = 0.80
+
+[osd]
+background_opacity = 0.80
+position = "top_right"
+scale = 0.80

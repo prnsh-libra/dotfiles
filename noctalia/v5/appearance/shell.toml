@@ -1,0 +1,22 @@
+[shell]
+app_icon_colorize = true
+corner_radius_scale = 1.2500000186264515
+show_location = false
+
+    [shell.animation]
+    speed = 1.2500000186264515
+
+    [shell.launcher]
+    app_grid = true
+
+        [shell.launcher.providers.emoji]
+        global = true
+
+    [shell.panel]
+    open_near_click_control_center = true
+    session_placement = "floating"
+    session_position = "center"
+    transparency_mode = "soft"
+
+    [shell.shadow]
+    direction = "center"
