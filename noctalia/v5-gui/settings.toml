@@ -1,0 +1,318 @@
+config_version = 2
+
+[backdrop]
+blur_intensity = 0.0
+enabled = true
+tint_intensity = 0.099999997764825821
+
+[bar.default]
+capsule = true
+capsule_opacity = 0.79999998211860657
+capsule_padding = 8.0
+center = [ "notifications", "clock", "caffeine" ]
+end = [ "network", "bluetooth", "volume", "brightness", "battery", "control-center" ]
+margin_ends = 0
+scale = 0.7500000037252903
+shadow = false
+start = [ "launcher", "workspaces", "tray", "media", "group:g1" ]
+thickness = 28
+
+    [[bar.default.capsule_group]]
+    enabled = true
+    fill = "surface_variant"
+    id = "g1"
+    members = [ "cpu", "ram", "temp", "sysmon", "network_rx", "network_tx" ]
+    opacity = 1.0
+    padding = 6.0
+
+[battery]
+warning_threshold = 15
+
+[[control_center.shortcuts]]
+type = "wifi"
+
+[[control_center.shortcuts]]
+type = "bluetooth"
+
+[[control_center.shortcuts]]
+type = "caffeine"
+
+[[control_center.shortcuts]]
+type = "notification"
+
+[[control_center.shortcuts]]
+type = "power_profile"
+
+[[control_center.shortcuts]]
+type = "clipboard"
+
+[desktop_widgets]
+enabled = false
+schema_version = 2
+widget_order = [ "desktop-widget-0000000000000001", "desktop-widget-0000000000000002" ]
+
+    [desktop_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [desktop_widgets.widget.desktop-widget-0000000000000001]
+    box_height = 96.0
+    box_width = 560.0
+    cx = 960.0
+    cy = 828.0
+    output = "eDP-1"
+    rotation = 0.0
+    type = "audio_visualizer"
+
+        [desktop_widgets.widget.desktop-widget-0000000000000001.settings]
+        bands = 32
+        show_when_idle = true
+
+    [desktop_widgets.widget.desktop-widget-0000000000000002]
+    box_height = 144.0
+    box_width = 448.0
+    cx = 960.0
+    cy = 268.0
+    output = "eDP-1"
+    rotation = 0.0
+    type = "clock"
+
+[idle]
+behavior_order = [ "lock", "screen-off", "lock-and-suspend" ]
+pre_action_fade_seconds = 1
+
+    [idle.behavior.lock]
+    action = "lock"
+    enabled = true
+    timeout = 300.0
+
+    [idle.behavior.lock-and-suspend]
+    action = "lock_and_suspend"
+    enabled = true
+    timeout = 900.0
+
+    [idle.behavior.screen-off]
+    action = "screen_off"
+    enabled = true
+    timeout = 300.0
+
+[location]
+address = "chennai"
+
+[lockscreen]
+blur_intensity = 0.0
+tint_intensity = 0.099999997764825821
+
+[lockscreen_widgets]
+enabled = true
+schema_version = 2
+widget_order = [
+    "lockscreen-login-box@eDP-1",
+    "lockscreen-widget-0000000000000001",
+    "lockscreen-widget-0000000000000002",
+    "lockscreen-widget-0000000000000003",
+    "lockscreen-widget-0000000000000004",
+    "lockscreen-widget-0000000000000005",
+    "lockscreen-widget-0000000000000006"
+]
+
+    [lockscreen_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = false
+
+    [lockscreen_widgets.widget."lockscreen-login-box@eDP-1"]
+    box_height = 112.0
+    box_width = 496.0
+    cx = 960.0
+    cy = 980.0
+    output = "eDP-1"
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@eDP-1".settings]
+        background_color = "on_primary"
+        background_opacity = 0.75
+        background_radius = 12.0
+        center_password_text = true
+        input_opacity = 0.95000000000000007
+        input_radius = 8.0
+        show_caps_lock = true
+        show_keyboard_layout = false
+        show_login_button = false
+        show_password_hint = false
+
+    [lockscreen_widgets.widget.lockscreen-widget-0000000000000001]
+    box_height = 144.0
+    box_width = 608.0
+    cx = 960.0
+    cy = 276.0
+    output = "eDP-1"
+    rotation = 0.0
+    type = "clock"
+
+    [lockscreen_widgets.widget.lockscreen-widget-0000000000000002]
+    box_height = 80.0
+    box_width = 496.0
+    cx = 960.0
+    cy = 796.0
+    output = "eDP-1"
+    rotation = 0.0
+    type = "audio_visualizer"
+
+        [lockscreen_widgets.widget.lockscreen-widget-0000000000000002.settings]
+        bands = 32
+        show_when_idle = true
+
+    [lockscreen_widgets.widget.lockscreen-widget-0000000000000003]
+    box_height = 160.0
+    box_width = 400.0
+    cx = 224.0
+    cy = 956.0
+    output = "eDP-1"
+    rotation = 0.0
+    type = "media_player"
+
+    [lockscreen_widgets.widget.lockscreen-widget-0000000000000004]
+    box_height = 32.0
+    box_width = 32.0
+    cx = 1824.0
+    cy = 60.0
+    output = "eDP-1"
+    rotation = 0.0
+    type = "button"
+
+        [lockscreen_widgets.widget.lockscreen-widget-0000000000000004.settings]
+        background = true
+        command = "noctalia msg session shutdown"
+        glyph = "shutdown"
+        variant = "primary"
+
+    [lockscreen_widgets.widget.lockscreen-widget-0000000000000005]
+    box_height = 32.0
+    box_width = 32.0
+    cx = 1776.0
+    cy = 60.0
+    output = "eDP-1"
+    rotation = -0.0
+    type = "button"
+
+        [lockscreen_widgets.widget.lockscreen-widget-0000000000000005.settings]
+        background = true
+        command = "noctalia msg session reboot"
+        glyph = "reboot"
+        label = ""
+        variant = "default"
+
+    [lockscreen_widgets.widget.lockscreen-widget-0000000000000006]
+    box_height = 32.0
+    box_width = 32.0
+    cx = 1728.0
+    cy = 60.0
+    output = "eDP-1"
+    rotation = 0.0
+    type = "button"
+
+        [lockscreen_widgets.widget.lockscreen-widget-0000000000000006.settings]
+        background = true
+        command = "noctalia msg session suspend"
+        glyph = "zzz"
+        label = ""
+        variant = "default"
+
+[notification]
+background_opacity = 0.89999997988343239
+scale = 0.80000000447034836
+
+[osd]
+background_opacity = 0.89999997988343239
+position = "top_right"
+scale = 0.80000000447034836
+
+[shell]
+app_icon_colorize = true
+avatar_path = "/home/prnsh/Pictures/Wallpapers/avatars/n.jpg"
+clipboard_auto_paste = "ctrl_v"
+clipboard_history_max_entries = 1000
+corner_radius_scale = 1.2500000186264515
+show_location = false
+
+    [shell.animation]
+    speed = 1.2500000186264515
+
+    [shell.launcher]
+    app_grid = true
+
+        [shell.launcher.providers.emoji]
+        global = false
+
+    [shell.panel]
+    open_near_click_control_center = true
+    session_placement = "floating"
+    session_position = "center"
+    transparency_mode = "soft"
+
+    [shell.shadow]
+    direction = "center"
+
+[theme]
+community_palette = "Oxocarbon"
+mode = "dark"
+source = "wallpaper"
+wallpaper_scheme = "m3-monochrome"
+
+    [theme.templates]
+    enable_builtin_templates = false
+
+[wallpaper.default]
+path = "/home/prnsh/Pictures/Wallpapers/gengar.jpg"
+
+[wallpaper.last]
+path = "/home/prnsh/Pictures/Wallpapers/gengar.jpg"
+
+[wallpaper.monitors.eDP-1]
+path = "/home/prnsh/Pictures/Wallpapers/gengar.jpg"
+
+[[wallpaper.favorite]]
+palette_source = "wallpaper"
+path = "/home/prnsh/Pictures/Wallpapers/gengar.jpg"
+theme_mode = "dark"
+wallpaper_scheme = "m3-monochrome"
+
+[widget.clock]
+capsule = true
+capsule_opacity = 0.65000000000000002
+capsule_padding = 12
+format = "{:%H:%M:%S} {:%d-%m-%Y}"
+
+[widget.control-center]
+glyph = "bolt-filled"
+
+[widget.cpu]
+show_label = false
+
+[widget.media]
+hide_when_no_media = true
+title_scroll = "on_hover"
+
+[widget.network_rx]
+enabled = false
+
+[widget.network_tx]
+enabled = false
+
+[widget.ram]
+show_label = false
+
+[widget.sysmon]
+show_label = false
+stat = "disk_pct"
+
+[widget.temp]
+show_label = false
+
+[widget.workspaces]
+active_pill_size = 2.5
+display = "none"
+scale = 0.75
