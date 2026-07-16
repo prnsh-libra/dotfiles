@@ -9,21 +9,12 @@ tint_intensity = 0.099999997764825821
 capsule = true
 capsule_opacity = 0.79999998211860657
 capsule_padding = 8.0
-center = [ "notifications", "clock", "caffeine" ]
 end = [ "network", "bluetooth", "volume", "brightness", "battery", "control-center" ]
 margin_ends = 0
 scale = 0.7500000037252903
 shadow = false
 start = [ "launcher", "workspaces", "tray", "media", "group:g1" ]
 thickness = 28
-
-    [[bar.default.capsule_group]]
-    enabled = true
-    fill = "surface_variant"
-    id = "g1"
-    members = [ "cpu", "ram", "temp", "sysmon", "network_rx", "network_tx" ]
-    opacity = 1.0
-    padding = 6.0
 
 [battery]
 warning_threshold = 15
@@ -292,6 +283,9 @@ glyph = "bolt-filled"
 [widget.cpu]
 show_label = false
 
+[widget.launcher]
+enabled = false
+
 [widget.media]
 hide_when_no_media = true
 title_scroll = "on_hover"
@@ -313,6 +307,4 @@ stat = "disk_pct"
 show_label = false
 
 [widget.workspaces]
-active_pill_size = 2.5
-display = "none"
-scale = 0.75
+active_pill_size = 3.0

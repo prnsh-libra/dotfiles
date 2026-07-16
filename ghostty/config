@@ -1,6 +1,7 @@
 # fonts
 font-family = FiraCode Nerd Font Mono Med
 font-size = 10.5
+font-feature = +calt, +liga, +dlig
 # theme = zenwritten_dark
 
 # cursor
