@@ -9,7 +9,9 @@ cursor-style = block
 cursor-style-blink = false
 
 # splits
-keybind = ctrl+alt+|=new_split:right
+keybind = ctrl+\=new_split:right
+keybind = ctrl+alt+\=new_split:down
+keybind = ctrl+alt+w=close_surface
 unfocused-split-opacity = 0.9
 
 # shell
