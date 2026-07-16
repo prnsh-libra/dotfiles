@@ -9,7 +9,7 @@ binds {
     Mod+Shift+ESCAPE                     { show-hotkey-overlay; }
 
     // ─── Applications ───
-    Mod+Return                          hotkey-overlay-title="Open Terminal: Alacritty" { spawn "alacritty"; }
+    Mod+T                                hotkey-overlay-title="Open Terminal: Ghostty" { spawn "ghostty"; }
     Mod+SPACE                     hotkey-overlay-title="Open App Launcher: noctalia launcher" { spawn-sh "noctalia msg panel-toggle launcher"; }
     Mod+W                               hotkey-overlay-title="Open Browser: helium" { spawn "helium-browser"; }
     Mod+ALT+L                           hotkey-overlay-title="Lock Screen: noctalia lock" { spawn-sh "noctalia msg session lock"; }
@@ -126,7 +126,7 @@ binds {
     Mod+Shift+Equal                     { set-window-height "+10%"; }
 
     // ─── Modes ───
-    Mod+T                               { maximize-column; }
+    Mod+Return                          { maximize-column; }
     Mod+Shift+T                         { toggle-window-floating; }
     Mod+F                               { fullscreen-window; }
     Mod+Shift+W                         { toggle-column-tabbed-display; }
