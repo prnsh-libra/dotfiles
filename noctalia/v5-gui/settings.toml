@@ -250,6 +250,7 @@ show_location = false
 [theme]
 community_palette = "Oxocarbon"
 mode = "dark"
+pure_black_dark = true
 source = "wallpaper"
 wallpaper_scheme = "m3-monochrome"
 
