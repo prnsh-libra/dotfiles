@@ -231,7 +231,7 @@ scale = 0.80000000447034836
 
 [shell]
 app_icon_colorize = false
-avatar_path = "/home/prnsh/Pictures/Wallpapers/avatars/n.jpg"
+avatar_path = "/home/prnsh/Pictures/Wallpapers/avatars/icarus.png"
 clipboard_auto_paste = "ctrl_v"
 clipboard_history_max_entries = 1000
 corner_radius_scale = 1.2500000186264515
@@ -263,6 +263,7 @@ source = "wallpaper"
 wallpaper_scheme = "m3-monochrome"
 
     [theme.templates]
+    community_ids = [ "neovim", "obsidian", "discord", "prismlauncher", "steam" ]
     enable_builtin_templates = false
 
 [wallpaper.default]
