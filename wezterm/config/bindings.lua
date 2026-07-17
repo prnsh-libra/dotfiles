@@ -34,6 +34,10 @@ local keys = {
 	{ key = "RightArrow", mods = mod.SUPER_REV, action = act.ActivatePaneDirection("Right") },
 	{ key = "UpArrow", mods = mod.SUPER_REV, action = act.ActivatePaneDirection("Up") },
 	{ key = "DownArrow", mods = mod.SUPER_REV, action = act.ActivatePaneDirection("Down") },
+	{ key = "h", mods = mod.SUPER_REV, action = act.ActivatePaneDirection("Left") },
+	{ key = "l", mods = mod.SUPER_REV, action = act.ActivatePaneDirection("Right") },
+	{ key = "k", mods = mod.SUPER_REV, action = act.ActivatePaneDirection("Up") },
+	{ key = "j", mods = mod.SUPER_REV, action = act.ActivatePaneDirection("Down") },
 
 	-- pane: resize pane
 	{ key = "LeftArrow", mods = mod.SUPER_REV .. "|SHIFT", action = act.AdjustPaneSize({ "Left", 5 }) },
@@ -42,7 +46,7 @@ local keys = {
 	{ key = "DownArrow", mods = mod.SUPER_REV .. "|SHIFT", action = act.AdjustPaneSize({ "Down", 5 }) },
 
 	-- launch menu
-	{ key = "l", mods = mod.SUPER_REV, action = wezterm.action.ShowLauncherArgs({ flags = "LAUNCH_MENU_ITEMS" }) },
+	{ key = "l", mods = mod.SUPER_REV .. "|SHIFT", action = wezterm.action.ShowLauncherArgs({ flags = "LAUNCH_MENU_ITEMS" }) },
 	{ key = "p", mods = mod.SUPER_REV, action = wezterm.action.ShowLauncherArgs({ flags = "FUZZY|WORKSPACES" }) },
 
   -- Disable Super + = & Super + -
