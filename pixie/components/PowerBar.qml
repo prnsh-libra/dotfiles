@@ -6,8 +6,8 @@ import QtQuick
 
 Row {
     id: powerBarRoot
-    spacing: 20
-    height: 30
+    spacing: 6
+    height: 36
 
     property color textColor: "white"
 
@@ -51,57 +51,123 @@ Row {
     }
 
     // Keyboard Layout
-    Text {
-        text: (typeof keyboard !== "undefined" && keyboard.layouts[keyboard.currentLayout]) ? keyboard.layouts[keyboard.currentLayout].shortName : "US"
-        color: textColor
-        font.pixelSize: 14
-        font.capitalization: Font.AllUppercase
+    Item {
+        width: 36
+        height: 36
         visible: typeof keyboard !== "undefined" && keyboard.layouts.length > 1
         anchors.verticalCenter: parent.verticalCenter
 
-        MouseArea {
+        Rectangle {
             anchors.fill: parent
-            onClicked: {
-                keyboard.currentLayout = (keyboard.currentLayout + 1) % keyboard.layouts.length
-            }
+            radius: width / 2
+            color: "white"
+            opacity: kbArea.pressed ? 0.22 : (kbArea.containsMouse ? 0.12 : 0)
+            Behavior on opacity { NumberAnimation { duration: 120 } }
+        }
+
+        Text {
+            anchors.centerIn: parent
+            text: (typeof keyboard !== "undefined" && keyboard.layouts[keyboard.currentLayout]) ? keyboard.layouts[keyboard.currentLayout].shortName : "US"
+            color: textColor
+            font.pixelSize: 13
+            font.weight: Font.Medium
+            font.capitalization: Font.AllUppercase
+        }
+
+        MouseArea {
+            id: kbArea
+            anchors.fill: parent
+            hoverEnabled: true
+            onClicked: keyboard.currentLayout = (keyboard.currentLayout + 1) % keyboard.layouts.length
         }
     }
 
     // Suspend
-    Text {
-        text: "󰤄"
-        color: textColor
-        font.pixelSize: 20
-        font.family: iconFont.name
+    Item {
+        width: 36
+        height: 36
         anchors.verticalCenter: parent.verticalCenter
-        MouseArea {
+
+        Rectangle {
             anchors.fill: parent
+            radius: width / 2
+            color: "white"
+            opacity: suspendArea.pressed ? 0.22 : (suspendArea.containsMouse ? 0.12 : 0)
+            Behavior on opacity { NumberAnimation { duration: 120 } }
+        }
+
+        Text {
+            anchors.centerIn: parent
+            text: "󰤄"
+            color: textColor
+            font.pixelSize: 19
+            font.family: iconFont.name
+        }
+
+        MouseArea {
+            id: suspendArea
+            anchors.fill: parent
+            hoverEnabled: true
             onClicked: sddm.suspend()
         }
     }
 
     // Restart
-    Text {
-        text: "󰑐"
-        color: textColor
-        font.pixelSize: 20
-        font.family: iconFont.name
+    Item {
+        width: 36
+        height: 36
         anchors.verticalCenter: parent.verticalCenter
-        MouseArea {
+
+        Rectangle {
             anchors.fill: parent
+            radius: width / 2
+            color: "white"
+            opacity: restartArea.pressed ? 0.22 : (restartArea.containsMouse ? 0.12 : 0)
+            Behavior on opacity { NumberAnimation { duration: 120 } }
+        }
+
+        Text {
+            anchors.centerIn: parent
+            text: "󰑐"
+            color: textColor
+            font.pixelSize: 19
+            font.family: iconFont.name
+        }
+
+        MouseArea {
+            id: restartArea
+            anchors.fill: parent
+            hoverEnabled: true
             onClicked: sddm.reboot()
         }
     }
 
     // Shutdown
-    Text {
-        text: "󰐥"
-        color: textColor
-        font.pixelSize: 20
-        font.family: iconFont.name
+    Item {
+        width: 36
+        height: 36
         anchors.verticalCenter: parent.verticalCenter
-        MouseArea {
+
+        Rectangle {
             anchors.fill: parent
+            radius: width / 2
+            color: "white"
+            opacity: shutdownArea.pressed ? 0.22 : (shutdownArea.containsMouse ? 0.12 : 0)
+            Behavior on opacity { NumberAnimation { duration: 120 } }
+        }
+
+        Text {
+            anchors.centerIn: parent
+            text: "󰐥"
+            color: textColor
+            font.pixelSize: 19
+            font.family: iconFont.name
+        }
+
+        MouseArea {
+            id: shutdownArea
+            anchors.fill: parent
+            hoverEnabled: true
             onClicked: sddm.powerOff()
         }
     }
