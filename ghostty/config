@@ -12,7 +12,17 @@ cursor-style-blink = false
 keybind = ctrl+\=new_split:right
 keybind = ctrl+alt+\=new_split:down
 keybind = ctrl+alt+w=close_surface
+keybind = ctrl+alt+h=goto_split:left
+keybind = ctrl+alt+j=goto_split:down
+keybind = ctrl+alt+k=goto_split:up
+keybind = ctrl+alt+l=goto_split:right
 unfocused-split-opacity = 0.9
+custom-shader = unfocused-dim.glsl
+custom-shader-animation = false
+
+# tabs
+keybind = ctrl+alt+[=previous_tab
+keybind = ctrl+alt+]=next_tab
 
 # shell
 shell-integration = detect
@@ -30,7 +40,7 @@ confirm-close-surface = false
 
 # copy - paste
 keybind = performable:ctrl+c=copy_to_clipboard
-keybind = ctrl+v=paste_from_clipboard
+keybind = performable:ctrl+v=paste_from_clipboard
 
 # colorscheme - terminal.sexy (grayscale - dark)
 palette = 0=#101010
