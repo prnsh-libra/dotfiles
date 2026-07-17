@@ -38,9 +38,8 @@ type = "power_profile"
 type = "clipboard"
 
 [desktop_widgets]
-enabled = false
 schema_version = 2
-widget_order = [ "desktop-widget-0000000000000001", "desktop-widget-0000000000000002" ]
+widget_order = [ "desktop-widget-0000000000000001", "desktop-widget-0000000000000002", "desktop-widget-0000000000000003" ]
 
     [desktop_widgets.grid]
     cell_size = 16
@@ -68,6 +67,15 @@ widget_order = [ "desktop-widget-0000000000000001", "desktop-widget-000000000000
     output = "eDP-1"
     rotation = 0.0
     type = "clock"
+
+    [desktop_widgets.widget.desktop-widget-0000000000000003]
+    box_height = 176.0
+    box_width = 432.0
+    cx = 216.0
+    cy = 944.0
+    output = "eDP-1"
+    rotation = 0.0
+    type = "media_player"
 
 [idle]
 behavior_order = [ "lock", "screen-off", "lock-and-suspend" ]
@@ -111,7 +119,7 @@ widget_order = [
     [lockscreen_widgets.grid]
     cell_size = 16
     major_interval = 4
-    visible = false
+    visible = true
 
     [lockscreen_widgets.widget."lockscreen-login-box@eDP-1"]
     box_height = 112.0
@@ -135,10 +143,10 @@ widget_order = [
         show_password_hint = false
 
     [lockscreen_widgets.widget.lockscreen-widget-0000000000000001]
-    box_height = 144.0
-    box_width = 608.0
+    box_height = 208.0
+    box_width = 720.0
     cx = 960.0
-    cy = 276.0
+    cy = 244.0
     output = "eDP-1"
     rotation = 0.0
     type = "clock"
@@ -222,7 +230,7 @@ position = "top_right"
 scale = 0.80000000447034836
 
 [shell]
-app_icon_colorize = true
+app_icon_colorize = false
 avatar_path = "/home/prnsh/Pictures/Wallpapers/avatars/n.jpg"
 clipboard_auto_paste = "ctrl_v"
 clipboard_history_max_entries = 1000
@@ -289,7 +297,7 @@ enabled = false
 
 [widget.media]
 hide_when_no_media = true
-title_scroll = "on_hover"
+title_scroll = "always"
 
 [widget.network_rx]
 enabled = false
