@@ -13,7 +13,7 @@ end = [ "network", "bluetooth", "volume", "brightness", "battery", "control-cent
 margin_ends = 0
 scale = 0.7500000037252903
 shadow = false
-start = [ "launcher", "workspaces", "tray", "media", "group:g1" ]
+start = [ "launcher", "workspaces", "group:g1", "tray", "media" ]
 thickness = 28
 
 [battery]
