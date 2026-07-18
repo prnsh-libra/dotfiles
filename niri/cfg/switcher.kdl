@@ -1,0 +1,27 @@
+// ─── Window Switcher (Alt-Tab) ───
+// https://github.com/niri-wm/niri/wiki/Configuration:-Recent-Windows
+// All binds use scope="workspace" so switching stays within the current workspace.
+
+recent-windows {
+    debounce-ms 750
+    open-delay-ms 150
+
+    highlight {
+        active-color "#999999ff"
+        urgent-color "#ff9999ff"
+        padding 30
+        corner-radius 20
+    }
+
+    previews {
+        max-height 480
+        max-scale 0.5
+    }
+
+    binds {
+        Alt+Tab         { next-window     scope="workspace"; }
+        Alt+Shift+Tab   { previous-window scope="workspace"; }
+        Alt+grave       { next-window     scope="workspace" filter="app-id"; }
+        Alt+Shift+grave { previous-window scope="workspace" filter="app-id"; }
+    }
+}
