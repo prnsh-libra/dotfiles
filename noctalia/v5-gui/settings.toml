@@ -35,7 +35,7 @@ type = "notification"
 type = "power_profile"
 
 [[control_center.shortcuts]]
-type = "clipboard"
+type = "nightlight"
 
 [desktop_widgets]
 schema_version = 2
