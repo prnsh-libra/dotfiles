@@ -1,0 +1,81 @@
+setupVersion: 1
+theme: 
+  dark: dark-lunar
+  light: dark-lunar
+symbolPreset: nerd
+statusLine: 
+  preset: compact
+  separator: powerline-thin
+  compactThinkingLevel: true
+  transparent: false
+terminal: 
+  showProgress: true
+display: 
+  smoothStreaming: true
+  shimmer: classic
+  showTokenUsage: true
+steeringMode: one-at-a-time
+loop: 
+  mode: prompt
+tools: 
+  approvalMode: yolo
+  format: auto
+power: 
+  sleepPrevention: idle
+compaction: 
+  handoffSaveToDisk: false
+edit: 
+  mode: hashline
+readLineNumbers: true
+lsp: 
+  formatOnWrite: true
+  diagnosticsOnEdit: true
+bash: 
+  enabled: true
+github: 
+  enabled: true
+browser: 
+  cmux: false
+providers: 
+  {}
+modelRoles: 
+  smol: openai-codex/gpt-5.6-luna:medium
+  slow: openai-codex/gpt-5.6-sol:xhigh
+  vision: openai-codex/gpt-5.6-terra:high
+  plan: openai-codex/gpt-5.6-sol:xhigh
+  designer: openai-codex/gpt-5.6-sol:xhigh
+  commit: openai-codex/gpt-5.6-luna:low
+  task: anthropic/claude-opus-4-8:high
+  advisor: openai-codex/gpt-5.6-sol:xhigh
+  tiny: anthropic/claude-opus-4-8:low
+  default: anthropic/claude-opus-4-8:high
+advisor: 
+  enabled: true
+  subagents: true
+contextPromotion: 
+  enabled: true
+hideThinkingBlock: true
+dev: 
+  autoqaConsent: granted
+defaultThinkingLevel: auto
+retry: 
+  fallbackChains: 
+    anthropic/*: 
+      - anthropic/claude-opus-5
+    default: 
+      - openai-codex/gpt-5.6-sol
+plan: 
+  enabled: false
+title: 
+  refreshOnReplan: false
+model: 
+  loopGuard: 
+    toolCallReminder: true
+colorBlindMode: true
+tui: 
+  textSizing: false
+  hyperlinks: auto
+  tight: false
+task: 
+  agentModelOverrides: 
+    task: anthropic/claude-opus-4-8:high
