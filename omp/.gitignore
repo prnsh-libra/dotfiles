@@ -1,0 +1,7 @@
+# Only track the omp agent config; ignore everything else omp writes
+# (databases, logs, sessions, caches, native blobs, etc.)
+*
+!.gitignore
+!agent/
+agent/*
+!agent/config.yml

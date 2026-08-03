@@ -54,7 +54,7 @@ advisor:
   subagents: true
 contextPromotion: 
   enabled: true
-hideThinkingBlock: true
+hideThinkingBlock: false
 dev: 
   autoqaConsent: granted
 defaultThinkingLevel: auto
