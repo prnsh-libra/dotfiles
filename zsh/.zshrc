@@ -110,11 +110,6 @@ case ":$PATH:" in
 esac
 # pnpm end
 
-# pyenv
-export PYENV_ROOT="$HOME/.pyenv"
-[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init - zsh)"
-
 # golang
 export GOPATH="$HOME/go"
 export PATH="$GOPATH/bin:$PATH"
@@ -133,27 +128,12 @@ df() {
   nvim
 }
 
-# edit zettelkasten
-zk() {
-  cd ~/gh/notes/content && nvim .
-}
-
-vencord() {
-  sh -c "$(curl -sS https://raw.githubusercontent.com/Vendicated/VencordInstaller/main/install.sh)"
-}
-
 # source XDG VARS
 source ~/.config/user-dirs.dirs
-
-# bun completions
-[ -s "/home/volty/.bun/_bun" ] && source "/home/volty/.bun/_bun"
 
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
-
-# emacs
-export PATH="$HOME/.config/emacs/bin:$PATH"
 
 # zoxide
 eval "$(zoxide init zsh)"
