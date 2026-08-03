@@ -68,6 +68,9 @@ binds {
     Mod+Shift+UP                        { focus-monitor-up; }
     Mod+Shift+Down                      { focus-monitor-down; }
 
+    Mod+M                              { focus-monitor-next; }
+    Mod+Shift+M                        { focus-monitor-previous; }
+
     Mod+Shift+CTRL+Left                 { move-column-to-monitor-left; }
     Mod+Shift+CTRL+Right                { move-column-to-monitor-right; }
     Mod+Shift+CTRL+UP                   { move-column-to-monitor-up; }
