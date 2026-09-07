@@ -1,4 +1,4 @@
-config_version = 2
+config_version = 11
 
 [backdrop]
 blur_intensity = 0.0
@@ -6,18 +6,35 @@ enabled = true
 tint_intensity = 0.099999997764825821
 
 [bar.default]
+background_opacity = 0.33999999240040779
 capsule = true
-capsule_opacity = 0.79999998211860657
+capsule_opacity = 0.4999999888241291
 capsule_padding = 8.0
-end = [ "network", "bluetooth", "volume", "brightness", "battery", "control-center" ]
+capsule_thickness = 0.99999998137354851
+end = [ "tray", "network", "bluetooth", "volume", "brightness", "battery", "control-center" ]
 margin_ends = 0
 scale = 0.7500000037252903
-shadow = false
-start = [ "launcher", "workspaces", "group:g1", "tray", "media" ]
+start = [ "launcher", "workspaces", "group:g1", "media" ]
 thickness = 28
+
+    [bar.default.dead_zone.actions]
+    middle = "media toggle"
+
+    [[bar.default.capsule_group]]
+    accordion = false
+    accordion_direction = "end"
+    enabled = true
+    fill = "surface_variant"
+    id = "g1"
+    members = [ "cpu", "ram", "temp", "sysmon", "network_rx", "network_tx" ]
+    opacity = 0.5
+    padding = 6.0
 
 [battery]
 warning_threshold = 15
+
+[control_center.calendar]
+show_week_numbers = true
 
 [[control_center.shortcuts]]
 type = "wifi"
@@ -38,44 +55,88 @@ type = "power_profile"
 type = "nightlight"
 
 [desktop_widgets]
+enabled = true
 schema_version = 2
-widget_order = [ "desktop-widget-0000000000000001", "desktop-widget-0000000000000002", "desktop-widget-0000000000000003" ]
+widget_order = [
+    "desktop-widget-0000000000000004",
+    "desktop-widget-0000000000000006",
+    "desktop-widget-0000000000000007",
+    "desktop-widget-github-prs",
+    "desktop-widget-github-issues"
+]
 
     [desktop_widgets.grid]
     cell_size = 16
     major_interval = 4
     visible = true
 
-    [desktop_widgets.widget.desktop-widget-0000000000000001]
+    [desktop_widgets.widget.desktop-widget-0000000000000004]
+    box_height = 144.0
+    box_width = 336.0
+    cx = 1704.0
+    cy = 948.0
+    output = "HDMI-A-1"
+    rotation = -0.0
+    type = "media_player"
+
+    [desktop_widgets.widget.desktop-widget-0000000000000006]
     box_height = 96.0
-    box_width = 560.0
+    box_width = 512.0
     cx = 960.0
-    cy = 828.0
-    output = "eDP-1"
+    cy = 812.0
+    output = "HDMI-A-1"
     rotation = 0.0
     type = "audio_visualizer"
 
-        [desktop_widgets.widget.desktop-widget-0000000000000001.settings]
+        [desktop_widgets.widget.desktop-widget-0000000000000006.settings]
         bands = 32
         show_when_idle = true
 
-    [desktop_widgets.widget.desktop-widget-0000000000000002]
-    box_height = 144.0
-    box_width = 448.0
+    [desktop_widgets.widget.desktop-widget-0000000000000007]
+    box_height = 132.33984375
+    box_width = 689.95703125
     cx = 960.0
-    cy = 268.0
-    output = "eDP-1"
+    cy = 238.169921875
+    output = "HDMI-A-1"
     rotation = 0.0
     type = "clock"
 
-    [desktop_widgets.widget.desktop-widget-0000000000000003]
-    box_height = 176.0
-    box_width = 432.0
-    cx = 216.0
-    cy = 944.0
-    output = "eDP-1"
+        [desktop_widgets.widget.desktop-widget-0000000000000007.settings]
+        background_opacity = 0.0
+        center_text = true
+        clock_style = "digital"
+        format = "{:%H:%M:%S}"
+        timezone = "UTC"
+
+    [desktop_widgets.widget.desktop-widget-github-issues]
+    box_height = 440.0
+    box_width = 0.0
+    cx = 296.0
+    cy = 772.0
+    output = "HDMI-A-1"
     rotation = 0.0
-    type = "media_player"
+    type = "prnsh/github:list"
+
+        [desktop_widgets.widget.desktop-widget-github-issues.settings]
+        author = "everyone"
+        background_padding = 32
+        cap = 50
+        kind = "issues"
+
+    [desktop_widgets.widget.desktop-widget-github-prs]
+    box_height = 440.0
+    box_width = 0.0
+    cx = 298.0
+    cy = 292.0
+    output = "HDMI-A-1"
+    rotation = 0.0
+    type = "prnsh/github:list"
+
+        [desktop_widgets.widget.desktop-widget-github-prs.settings]
+        author = "everyone"
+        background_padding = 32
+        cap = 50
+        kind = "prs"
 
 [idle]
 behavior_order = [ "lock", "screen-off", "lock-and-suspend" ]
@@ -107,13 +168,18 @@ tint_intensity = 0.099999997764825821
 enabled = true
 schema_version = 2
 widget_order = [
+    "lockscreen-login-box@DP-1",
+    "lockscreen-login-box@HDMI-A-1",
     "lockscreen-login-box@eDP-1",
     "lockscreen-widget-0000000000000001",
     "lockscreen-widget-0000000000000002",
     "lockscreen-widget-0000000000000003",
     "lockscreen-widget-0000000000000004",
     "lockscreen-widget-0000000000000005",
-    "lockscreen-widget-0000000000000006"
+    "lockscreen-widget-0000000000000006",
+    "lockscreen-widget-0000000000000007",
+    "lockscreen-widget-0000000000000008",
+    "lockscreen-widget-0000000000000009"
 ]
 
     [lockscreen_widgets.grid]
@@ -121,11 +187,61 @@ widget_order = [
     major_interval = 4
     visible = true
 
-    [lockscreen_widgets.widget."lockscreen-login-box@eDP-1"]
-    box_height = 112.0
-    box_width = 496.0
+    [lockscreen_widgets.widget."lockscreen-login-box@DP-1"]
+    box_height = 196.0
+    box_width = 810.0
     cx = 960.0
-    cy = 980.0
+    cy = 898.0
+    output = "DP-1"
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@DP-1".settings]
+        background_color = "surface_variant"
+        background_opacity = 0.88
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        layout = "regular"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_media = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@HDMI-A-1"]
+    box_height = 70.0
+    box_width = 528.0
+    cx = 960.0
+    cy = 1007.0
+    output = "HDMI-A-1"
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@HDMI-A-1".settings]
+        background_color = "surface_variant"
+        background_opacity = 0.5
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        layout = "compact"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_media = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@eDP-1"]
+    box_height = 196.0
+    box_width = 720.0
+    cx = 960.0
+    cy = 982.0
     output = "eDP-1"
     rotation = 0.0
     type = "login_box"
@@ -137,16 +253,20 @@ widget_order = [
         center_password_text = true
         input_opacity = 0.95000000000000007
         input_radius = 8.0
+        layout = "regular"
         show_caps_lock = true
         show_keyboard_layout = false
         show_login_button = false
-        show_password_hint = false
+        show_media = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
 
     [lockscreen_widgets.widget.lockscreen-widget-0000000000000001]
     box_height = 208.0
     box_width = 720.0
     cx = 960.0
-    cy = 244.0
+    cy = 208.0
     output = "eDP-1"
     rotation = 0.0
     type = "clock"
@@ -155,7 +275,7 @@ widget_order = [
     box_height = 80.0
     box_width = 496.0
     cx = 960.0
-    cy = 796.0
+    cy = 720.0
     output = "eDP-1"
     rotation = 0.0
     type = "audio_visualizer"
@@ -168,7 +288,7 @@ widget_order = [
     box_height = 160.0
     box_width = 400.0
     cx = 224.0
-    cy = 956.0
+    cy = 984.0
     output = "eDP-1"
     rotation = 0.0
     type = "media_player"
@@ -220,14 +340,55 @@ widget_order = [
         label = ""
         variant = "default"
 
+    [lockscreen_widgets.widget.lockscreen-widget-0000000000000007]
+    box_height = 96.0
+    box_width = 592.0
+    cx = 960.0
+    cy = 796.0
+    output = "HDMI-A-1"
+    rotation = 0.0
+    type = "audio_visualizer"
+
+        [lockscreen_widgets.widget.lockscreen-widget-0000000000000007.settings]
+        bands = 32
+        show_when_idle = true
+
+    [lockscreen_widgets.widget.lockscreen-widget-0000000000000008]
+    box_height = 160.0
+    box_width = 592.0
+    cx = 960.0
+    cy = 236.0
+    output = "HDMI-A-1"
+    rotation = 0.0
+    type = "clock"
+
+        [lockscreen_widgets.widget.lockscreen-widget-0000000000000008.settings]
+        background_opacity = 0.0
+        format = "{:%H:%M:%S}"
+
+    [lockscreen_widgets.widget.lockscreen-widget-0000000000000009]
+    box_height = 0.0
+    box_width = 0.0
+    cx = 195.0
+    cy = 946.0
+    output = "HDMI-A-1"
+    rotation = 0.0
+    type = "media_player"
+
 [notification]
 background_opacity = 0.89999997988343239
+history_retention_hours = 12
+layer = "overlay"
+position = "top_center"
 scale = 0.80000000447034836
 
 [osd]
 background_opacity = 0.89999997988343239
-position = "top_right"
+position = "top_center"
 scale = 0.80000000447034836
+
+[plugins]
+enabled = [ "prnsh/github" ]
 
 [shell]
 app_icon_colorize = false
@@ -259,7 +420,6 @@ show_location = false
 community_palette = "Oxocarbon"
 mode = "dark"
 pure_black_dark = true
-source = "wallpaper"
 wallpaper_scheme = "m3-monochrome"
 
     [theme.templates]
@@ -267,19 +427,37 @@ wallpaper_scheme = "m3-monochrome"
     enable_builtin_templates = false
 
 [wallpaper.default]
-path = "/home/prnsh/Pictures/Wallpapers/gengar.jpg"
+path = "/home/prnsh/Pictures/Wallpapers/wallhaven-d8om6o.jpg"
 
 [wallpaper.last]
-path = "/home/prnsh/Pictures/Wallpapers/gengar.jpg"
+path = "/home/prnsh/Pictures/Wallpapers/wallhaven-d8om6o.jpg"
+
+[wallpaper.monitors.HDMI-A-1]
+path = "/home/prnsh/Pictures/Wallpapers/wallhaven-d8om6o.jpg"
 
 [wallpaper.monitors.eDP-1]
-path = "/home/prnsh/Pictures/Wallpapers/gengar.jpg"
+path = "/home/prnsh/Pictures/Wallpapers/wallhaven-d8om6o.jpg"
 
 [[wallpaper.favorite]]
 palette_source = "wallpaper"
 path = "/home/prnsh/Pictures/Wallpapers/gengar.jpg"
 theme_mode = "dark"
 wallpaper_scheme = "m3-monochrome"
+
+[[wallpaper.favorite]]
+palette_source = "wallpaper"
+path = "/home/prnsh/Pictures/Wallpapers/hero-landscape.webp"
+theme_mode = "dark"
+wallpaper_scheme = "m3-monochrome"
+
+[[wallpaper.favorite]]
+palette_source = "wallpaper"
+path = "/home/prnsh/Pictures/Wallpapers/image.png"
+theme_mode = "dark"
+wallpaper_scheme = "m3-monochrome"
+
+[widget.bluetooth]
+show_label = true
 
 [widget.clock]
 capsule = true
@@ -298,10 +476,9 @@ enabled = false
 
 [widget.media]
 hide_when_no_media = true
+max_length = 200
+min_length = 200
 title_scroll = "always"
-
-[widget.network_rx]
-enabled = false
 
 [widget.network_tx]
 enabled = false
@@ -310,7 +487,8 @@ enabled = false
 show_label = false
 
 [widget.sysmon]
-show_label = false
+enabled = false
+show_value = true
 stat = "disk_pct"
 
 [widget.temp]

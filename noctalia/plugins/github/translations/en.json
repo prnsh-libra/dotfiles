@@ -1,0 +1,12 @@
+{
+  "settings.kind.label": "Content",
+  "settings.kind.description": "Show open pull requests or open issues.",
+  "settings.kind.prs": "Pull requests",
+  "settings.kind.issues": "Issues",
+  "settings.author.label": "Scope",
+  "settings.author.description": "Everyone shows every open item in your orgs and account, by any author; Me shows only items you authored.",
+  "settings.author.everyone": "Everyone",
+  "settings.author.me": "Me",
+  "settings.cap.label": "Max items",
+  "settings.cap.description": "Maximum number of items to display (1-50)."
+}

@@ -1,0 +1,10 @@
+id = "local.omp-workspace-rename"
+name = "OMP Workspace Rename"
+version = "1.0.0"
+min_herdr_version = "0.7.5"
+description = "Sync the native workspace rename to the focused OMP session"
+platforms = ["linux"]
+
+[[events]]
+on = "workspace.renamed"
+command = ["sh", "sync.sh"]

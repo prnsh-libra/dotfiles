@@ -5,3 +5,6 @@
 !agent/
 agent/*
 !agent/config.yml
+!agent/extensions/
+agent/extensions/*
+!agent/extensions/herdr-workspace-title-sync.ts

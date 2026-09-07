@@ -1,0 +1,45 @@
+id = "prnsh/github"
+name = "GitHub"
+version = "1.0.0"
+plugin_api = 9
+author = "prnsh"
+license = "MIT"
+icon = "brand-github"
+description = "Desktop widget listing open GitHub pull requests or issues, ordered by recency, via the gh CLI."
+tags = ["github", "git", "productivity"]
+dependencies = ["gh", "xdg-open"]
+
+[[desktop_widget]]
+id = "list"
+entry = "widget.luau"
+
+  [[desktop_widget.setting]]
+  key = "kind"
+  type = "select"
+  label_key = "settings.kind.label"
+  description_key = "settings.kind.description"
+  default = "prs"
+  options = [
+    { value = "prs", label_key = "settings.kind.prs" },
+    { value = "issues", label_key = "settings.kind.issues" },
+  ]
+
+  [[desktop_widget.setting]]
+  key = "author"
+  type = "select"
+  label_key = "settings.author.label"
+  description_key = "settings.author.description"
+  default = "everyone"
+  options = [
+    { value = "everyone", label_key = "settings.author.everyone" },
+    { value = "me", label_key = "settings.author.me" },
+  ]
+
+  [[desktop_widget.setting]]
+  key = "cap"
+  type = "int"
+  label_key = "settings.cap.label"
+  description_key = "settings.cap.description"
+  default = 50
+  min = 1
+  max = 50

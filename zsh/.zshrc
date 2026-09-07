@@ -121,6 +121,7 @@ export PATH="$HOME/.cargo/bin:$PATH"
 alias gtree="git ls-tree -r --name-only HEAD | tree --fromfile"
 alias lg="lazygit"
 alias ld="lazydocker"
+alias ssh-staging="ssh -i /home/prnsh/.ssh/staging-vm-ops_id_ed25519 ubuntu@40.160.85.181"
 
 # edit dotfiles
 df() {
@@ -137,3 +138,14 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 
 # zoxide
 eval "$(zoxide init zsh)"
+
+export PATH="/home/prnsh/.local/bin:$PATH"
+
+# opencode
+export PATH=/home/prnsh/.opencode/bin:$PATH
+
+# add Pulumi to the PATH
+export PATH=$PATH:/home/prnsh/.pulumi/bin
+
+# omp: disable auto chat title generation
+export PI_NO_TITLE=1
